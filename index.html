@@ -1,0 +1,350 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Charishma ❤️</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Georgia, serif;
+  text-align: center;
+  color: #633b50;
+  background: linear-gradient(135deg, #ffe0ec, #fff1d8, #f9d9ed);
+  overflow-x: hidden;
+}
+
+section {
+  padding: 65px 20px;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: 40px;
+  color: #c04479;
+}
+
+h2 {
+  color: #bd4e7d;
+}
+
+p {
+  line-height: 1.8;
+  font-size: 17px;
+  max-width: 550px;
+}
+
+button {
+  background: #d94d88;
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 30px;
+  font-size: 17px;
+  margin: 10px;
+  cursor: pointer;
+  box-shadow: 0 5px 15px #c66a9360;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+.hero {
+  min-height: 100vh;
+}
+
+.heart {
+  font-size: 55px;
+  animation: beat 1s infinite;
+}
+
+@keyframes beat {
+  50% { transform: scale(1.2); }
+}
+
+.photos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  max-width: 900px;
+}
+
+.photo {
+  width: 250px;
+  height: 250px;
+  border: 5px solid white;
+  border-radius: 20px;
+  background: #f6b8d2;
+  box-shadow: 0 5px 15px #a85c7b50;
+  overflow: hidden;
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.placeholder {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  color: #914365;
+}
+
+.kitten {
+  font-size: 75px;
+}
+
+.surprise {
+  background: #fff5fa;
+  border-radius: 25px;
+  padding: 25px;
+  max-width: 600px;
+  box-shadow: 0 5px 25px #c66a9340;
+}
+
+#finalMessage {
+  display: none;
+  animation: appear 1s;
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.confetti {
+  position: fixed;
+  top: -20px;
+  z-index: 10;
+  pointer-events: none;
+  animation: fall 4s linear forwards;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+footer {
+  padding: 25px;
+  color: #a14a72;
+}
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+  <div class="heart">💗</div>
+  <h1>Happy Birthday!</h1>
+  <h1>Charishma 🎂</h1>
+  <p>
+    Today is not just another day.
+    Today is a celebration of someone truly special.
+    May your day be filled with happiness,
+    beautiful memories and endless smiles.
+  </p>
+  <button onclick="document.getElementById('memories').scrollIntoView({behavior:'smooth'})">
+    Open Your Surprise ✨
+  </button>
+</section>
+
+<section id="memories">
+  <h2>Beautiful Memories 📸</h2>
+  <p>Every beautiful memory deserves a special place.</p>
+
+  <div class="photos">
+    <div class="photo">
+      <img src="photo1.jpg" alt="Memory 1"
+      onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="placeholder" style="display:none">📷 Add first photo</div>
+    </div>
+
+    <div class="photo">
+      <img src="photo2.jpg" alt="Memory 2"
+      onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="placeholder" style="display:none">📷 Add second photo</div>
+    </div>
+
+    <div class="photo">
+      <img src="photo3.jpg" alt="Memory 3"
+      onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="placeholder" style="display:none">📷 Add third photo</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>A Little Birthday Guest 🐱</h2>
+  <div class="kitten">🐱🎂🐱</div>
+  <h2>Meow! Happy Birthday!</h2>
+  <p>
+    Even these little kittens came to wish you
+    a wonderful birthday!
+  </p>
+  <div style="font-size:45px">🎀 🎁 🌸</div>
+</section>
+
+<section>
+  <h2>One Little Question 💌</h2>
+  <p>
+    Are you ready to make this birthday
+    a beautiful memory?
+  </p>
+
+  <button onclick="answer('YES')">YES! 💗</button>
+  <button onclick="answer('NO')">Not yet 😊</button>
+
+  <h2 id="answer"></h2>
+</section>
+
+<section>
+  <div class="surprise">
+    <h2>One Last Surprise ❤️</h2>
+    <p>
+      Some people make ordinary moments special
+      simply by being themselves.
+      Today, I hope you receive all the happiness
+      that you bring into the lives around you.
+    </p>
+
+    <button onclick="showSurprise()">
+      Open Your Final Surprise 🎁
+    </button>
+
+    <div id="finalMessage">
+      <div style="font-size:55px">💖</div>
+      <h1>Stay Wonderful!</h1>
+      <p>
+        May every new chapter of your life
+        bring you reasons to smile,
+        dreams to achieve and memories to cherish.
+      </p>
+      <h2>Once Again, Happy Birthday Charishma! 🎂</h2>
+      <div style="font-size:35px">🌷✨💗</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Made with ❤️ and lots of birthday wishes.
+</footer>
+
+<button onclick="toggleMusic()" id="musicButton">
+  🎵 Play Birthday Melody
+</button>
+
+<script>
+let audio;
+let playing = false;
+let musicTimer;
+
+function toggleMusic() {
+  const button = document.getElementById("musicButton");
+
+  if (playing) {
+    clearInterval(musicTimer);
+    if (audio) audio.close();
+    playing = false;
+    button.innerText = "🎵 Play Birthday Melody";
+    return;
+  }
+
+  const AudioContext = window.AudioContext || window.webkitAudioContext;
+  if (!AudioContext) {
+    alert("Audio is not supported in this browser.");
+    return;
+  }
+
+  audio = new AudioContext();
+  audio.resume();
+  playing = true;
+  button.innerText = "⏸ Stop Melody";
+
+  const notes = [523, 659, 784, 659, 698, 784, 880, 784];
+  let i = 0;
+
+  function playNote() {
+    if (!playing) return;
+
+    const oscillator = audio.createOscillator();
+    const gain = audio.createGain();
+
+    oscillator.type = "sine";
+    oscillator.frequency.value = notes[i % notes.length];
+
+    gain.gain.setValueAtTime(0.12, audio.currentTime);
+    gain.gain.exponentialRampToValueAtTime(
+      0.001, audio.currentTime + 0.35
+    );
+
+    oscillator.connect(gain);
+    gain.connect(audio.destination);
+
+    oscillator.start();
+    oscillator.stop(audio.currentTime + 0.35);
+    i++;
+  }
+
+  playNote();
+  musicTimer = setInterval(playNote, 450);
+}
+
+function answer(choice) {
+  const result = document.getElementById("answer");
+
+  if (choice === "YES") {
+    result.innerText = "Yay! Let's make beautiful memories! 💗";
+    celebrate();
+  } else {
+    result.innerText = "Take your time! The surprises are waiting! 🌸";
+  }
+}
+
+function showSurprise() {
+  document.getElementById("finalMessage").style.display = "block";
+  celebrate();
+  document.getElementById("finalMessage").scrollIntoView({
+    behavior: "smooth",
+    block: "center"
+  });
+}
+
+function celebrate() {
+  const symbols = ["💗", "✨", "🌸", "🎉", "💕", "🎊"];
+
+  for (let i = 0; i < 45; i++) {
+    const item = document.createElement("div");
+    item.className = "confetti";
+    item.innerText = symbols[Math.floor(Math.random() * symbols.length)];
+    item.style.left = Math.random() * 100 + "vw";
+    item.style.animationDuration = (2 + Math.random() * 3) + "s";
+    item.style.fontSize = (15 + Math.random() * 20) + "px";
+
+    document.body.appendChild(item);
+
+    setTimeout(() => item.remove(), 5000);
+  }
+}
+</script>
+
+</body>
+</html>
